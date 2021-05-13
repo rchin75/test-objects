@@ -1,5 +1,8 @@
 # test-objects
 
+The goal of this Vue JS project is to test reactivity of an hierarchical object model
+using the Vue Composition API. 
+
 ## Project setup
 ```
 npm install
