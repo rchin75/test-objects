@@ -18,14 +18,19 @@
         <div class="order">
             <p>Order name: {{order.name}}</p>
             <p>Ordered by: {{order.buyer}}</p>
-            <p>
-                Items:<br>
+
+            Items:
             <ul>
                 <li v-for="item in order.items" :key="item.name">
-                    {{ item }}
+                    Name: {{ item.name }}, Price: {{item.price}}
+                    <ul>
+                        <li v-for="subItem in item.subItems" :key="subItem.name">
+                            Sub item name: {{subItem.name}}, Price: {{subItem.price}}
+                        </li>
+                    </ul>
                 </li>
             </ul>
-            </p>
+
         </div>
 
     </div>
