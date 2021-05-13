@@ -11,6 +11,7 @@
             <button @click="onAddItem">Add item</button> |
             <button @click="onRemoveItem">Remove item</button> |
             <button @click="onModifyItemPrices">Modify item prices</button> |
+            <button @click="onModifySubItemPrices">Modify sub item prices</button> |
             <button @click="onRenameBuyer">Rename the buyer</button>
         </div>
 
@@ -65,6 +66,11 @@
                 items++;
                 const item = new Item("Item" + items, getRandomPrice());
                 order.value?.items.push(item);
+
+                // Try adding a sub item too to make the hierarchy even deeper.
+                items++;
+                const subItem = new Item("Sub-item" + items, getRandomPrice());
+                item.subItems.push(subItem);
             }
 
             // Removes the last itemfrom the order.
@@ -93,6 +99,15 @@
                 }
             }
 
+            /* Modifies only the sub item prices */
+            function onModifySubItemPrices() {
+                order.value?.items.forEach(item => {
+                    item.subItems.forEach(subItem => {
+                        subItem.price = getRandomPrice();
+                    });
+                })
+            }
+
             return {
                 order,
                 // The UI should react to all of these interactions with the order object.
@@ -100,6 +115,7 @@
                 onAddItem,
                 onRemoveItem,
                 onModifyItemPrices,
+                onModifySubItemPrices,
                 onRenameBuyer
             };
         }

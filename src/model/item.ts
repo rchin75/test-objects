@@ -8,6 +8,9 @@ export default class Item {
     /** Price of the item. */
     price : number;
 
+    /** Optional sub items. */
+    subItems : Item[];
+
     /**
      * Constructor.
      * @param name Name of the item.
@@ -16,5 +19,6 @@ export default class Item {
     constructor(name : string, price : number) {
         this.name = name;
         this.price = price;
+        this.subItems = [];
     }
 }
