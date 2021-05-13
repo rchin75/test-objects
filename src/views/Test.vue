@@ -42,7 +42,7 @@
     export default {
         name: 'Test',
         setup() {
-            let {order, createOrder} = useOrder();
+            const {order, createOrder} = useOrder();
             let items = 0;
             let orders = 1;
             // Some names to choose from.
