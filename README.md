@@ -3,6 +3,8 @@
 The goal of this Vue JS project is to test reactivity of an hierarchical object model
 using the Vue Composition API. 
 
+GitHub: https://github.com/rchin75/test-objects
+
 ## Project setup
 ```
 npm install
